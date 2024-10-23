@@ -14,6 +14,7 @@
           nativeBuildInputs = with pkgs; [
             hugo
             marksman
+            yaml-language-server
           ];
         };
       }
