@@ -2,11 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://affirm-bats-yodel.github.io/blog-is-not-that-hard-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%96%B4%EB%A0%B5%EC%A7%80-%EC%95%8A%EB%8B%A4/</loc>
+    <lastmod>2024-10-23T08:28:30+00:00</lastmod>
+  </url><url>
+    <loc>https://affirm-bats-yodel.github.io/blog/blogging/</loc>
+    <lastmod>2024-10-23T08:28:30+00:00</lastmod>
+  </url><url>
+    <loc>https://affirm-bats-yodel.github.io/blog/</loc>
+    <lastmod>2024-10-23T08:28:30+00:00</lastmod>
+  </url><url>
+    <loc>https://affirm-bats-yodel.github.io/blog/hugo/</loc>
+    <lastmod>2024-10-23T08:28:30+00:00</lastmod>
+  </url><url>
+    <loc>https://affirm-bats-yodel.github.io/tags/</loc>
+    <lastmod>2024-10-23T08:28:30+00:00</lastmod>
+  </url><url>
     <loc>https://affirm-bats-yodel.github.io/</loc>
     <lastmod>2024-10-23T07:54:58+00:00</lastmod>
   </url><url>
     <loc>https://affirm-bats-yodel.github.io/categories/</loc>
-  </url><url>
-    <loc>https://affirm-bats-yodel.github.io/tags/</loc>
   </url>
 </urlset>
