@@ -2,7 +2,7 @@ baseURL = 'https://affirm-bats-yodel.github.io'
 languageCode = 'ko-KR'
 title = 'Lee Blog'
 publishDir = 'docs'
-theme = "hugo-bearcub"
+theme = "hugo-bearblog"
 
 # Enable `robots.txt` for SEO
 enableRobotsTXT = true
