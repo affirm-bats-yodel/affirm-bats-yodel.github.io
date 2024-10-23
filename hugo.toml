@@ -15,3 +15,6 @@ enableRobotsTXT = true
 [params]
   description = 'Lee Blog'
   dateFormat = "2006-01-02"
+  [params.author]
+    email = 'affirm-bats-yodel@duck.com'
+    name = 'Lee'
