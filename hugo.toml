@@ -1,5 +1,33 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://affirm-bats-yodel.github.io'
+languageCode = 'ko-KR'
+title = 'Lee Blog'
 publishDir = 'docs'
 theme = "hugo-bearcub"
+
+# Enable `robots.txt` for SEO
+enableRobotsTXT = true
+
+[languages]
+  [languages.en]
+    title = 'Lee Blog'
+    languageName = 'English'
+    LanguageCode = 'en-US'
+    contentDir = 'content.en'
+    [languages.en.params]
+      madeWith = "Made with [Hugo](https://gohugo.io/) && [Bear Cub](https://github.com/clente/hugo-bearcub)"
+  [languages.ko]
+    title = 'Lee 의 블로그'
+    languageCode = 'Korean'
+    LanguageCode = 'ko-KR'
+    contentDir = 'content'
+    [languages.ko.params]
+      madeWith = "이 블로그는 [Hugo](https://gohugo.io/) 및 [Bear Cub](https://github.com/clente/hugo-bearcub) 으로 제작되었습니다."
+
+[params]
+  description = 'Lee Blog talking about various things'
+  title = 'Lee Blog'
+  dateFormat = '2006-01-02 15:04:05'
+  hideUntranslated = false
+  [params.author]
+    name = 'Lee'
+    email = 'affirm-bats-yodel@duck.com'
