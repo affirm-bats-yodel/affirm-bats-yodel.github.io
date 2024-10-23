@@ -1,3 +1,2 @@
-User-agent: *
-Allow: /
+User-Agent: *
 Sitemap: https://affirm-bats-yodel.github.io/sitemap.xml
