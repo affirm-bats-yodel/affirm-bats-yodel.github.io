@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Google Colaboratory (Colab) 에서 vLLM 설치시 torchaudio 충돌 해결법 | Lee Blog</title>
+<meta name="title" content="Google Colaboratory (Colab) 에서 vLLM 설치시 torchaudio 충돌 해결법" />
+<meta name="description" content="Colab 에서 vLLM 설치 시에 torchaudio 패키지 충돌 원인에 대하여 파악 및 해결 방법에 대하여 공유" />
+<meta name="keywords" content="vllm,google,colab,llm," />
+
+
+<meta property="og:url" content="https://affirm-bats-yodel.github.io/google-colaboratory-colab-%EC%97%90%EC%84%9C-vllm-%EC%84%A4%EC%B9%98%EC%8B%9C-torchaudio-%EC%B6%A9%EB%8F%8C-%ED%95%B4%EA%B2%B0%EB%B2%95/">
+  <meta property="og:site_name" content="Lee Blog">
+  <meta property="og:title" content="Google Colaboratory (Colab) 에서 vLLM 설치시 torchaudio 충돌 해결법">
+  <meta property="og:description" content="Colab 에서 vLLM 설치 시에 torchaudio 패키지 충돌 원인에 대하여 파악 및 해결 방법에 대하여 공유">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-10-31T10:07:09+00:00">
+    <meta property="article:modified_time" content="2024-10-31T10:07:09+00:00">
+    <meta property="article:tag" content="Vllm">
+    <meta property="article:tag" content="Google">
+    <meta property="article:tag" content="Colab">
+    <meta property="article:tag" content="Llm">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Google Colaboratory (Colab) 에서 vLLM 설치시 torchaudio 충돌 해결법">
+  <meta name="twitter:description" content="Colab 에서 vLLM 설치 시에 torchaudio 패키지 충돌 원인에 대하여 파악 및 해결 방법에 대하여 공유">
+
+
+
+
+  <meta itemprop="name" content="Google Colaboratory (Colab) 에서 vLLM 설치시 torchaudio 충돌 해결법">
+  <meta itemprop="description" content="Colab 에서 vLLM 설치 시에 torchaudio 패키지 충돌 원인에 대하여 파악 및 해결 방법에 대하여 공유">
+  <meta itemprop="datePublished" content="2024-10-31T10:07:09+00:00">
+  <meta itemprop="dateModified" content="2024-10-31T10:07:09+00:00">
+  <meta itemprop="wordCount" content="1143">
+  <meta itemprop="keywords" content="Vllm,Google,Colab,Llm">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+<meta name="yandex-verification" content="32b82ad6831a28a4" />
+
+<meta name="naver-site-verification" content="502abe1b079c712b94f98dd01632fd0d2b15daee" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X920649M6Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X920649M6Q');
+</script>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Lee Blog</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Google Colaboratory (Colab) 에서 vLLM 설치시 torchaudio 충돌 해결법</h1>
+<p>
+  <i>
+    <time datetime='2024-10-31' pubdate>
+      2024-10-31
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>Google Colab 에서 <code>vLLM</code> 패키지 설치 중에 <code>torchvision</code> 패키지가 충돌이 나서
+해당 원인과 해결 방법에 대하여 공유하고자 한다.</p>
+<h2 id="tldr-간단요약">TLDR (간단요약)</h2>
+<p>원인은 기존에 설치된 <code>torch</code>, <code>torchaudio</code> 및 <code>torchvison</code> 패키지의 조합이 <code>2.5.x</code> 에 맞게 되어 있어서
+그런 것으로, vLLM 설치 시에 <code>torchaudio</code> 도 2.4.0 으로 재설치 되도록 추가하면 정상적으로 설치할
+수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install vllm torchaudio<span style="color:#f92672">==</span>2.4.0
+</span></span></code></pre></div><h2 id="설치-중-마주한-문제">설치 중 마주한 문제</h2>
+<p>공식 문서에서 설명하는 설치 가이드에 따라서, 아래와 같은 명령어를 실행 후 기다렸다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install vllm
+</span></span></code></pre></div><p>그리고 아래와 같은 에러가 표출되면서 정상적으로 설치되지 않았다.</p>
+<pre tabindex="0"><code>ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed.
+This behaviour is the source of the following dependency conflicts.
+torchaudio 2.5.0+cu121 requires torch==2.5.0, but you have torch 2.4.0 which is incompatible.
+</code></pre><p>대충 위의 에러를 보면, 대충 <code>torch</code> 와 연관되어 있는 패키지의 버전이 충돌이 나는 것 같다.
+Python 은 이게 문제인데, <code>vLLM</code> 이 어떤 패키지를 필요로 하는지부터 차근차근히 살펴보기로 했다.</p>
+<h3 id="원인-파악-1---vllm-의-requirements">원인 파악 1 - vLLM 의 Requirements</h3>
+<p><code>vLLM</code> 의 <code>requirements.txt</code> 를 찾아보니, 기본적으로 사용하는 <code>requirements-common.txt</code> 파일과
+GPU 버전인 경우 필요로 하는 <code>requirements-cuda.txt</code> 가 있다.</p>
+<p>아래는 <code>requirements-common.txt</code> 파일의 내용이다.</p>
+<pre tabindex="0"><code>psutil
+sentencepiece  # Required for LLaMA tokenizer.
+numpy &lt; 2.0.0
+requests &gt;= 2.26.0
+tqdm
+py-cpuinfo
+transformers &gt;= 4.45.2  # Required for Llama 3.2 and Qwen2-VL.
+tokenizers &gt;= 0.19.1  # Required for Llama 3.
+protobuf # Required by LlamaTokenizer.
+fastapi &gt;= 0.107.0, &lt; 0.113.0; python_version &lt; &#39;3.9&#39;
+fastapi &gt;= 0.107.0, != 0.113.*, != 0.114.0; python_version &gt;= &#39;3.9&#39;
+aiohttp
+openai &gt;= 1.40.0 # Ensure modern openai package (ensure types module present)
+uvicorn[standard]
+pydantic &gt;= 2.9  # Required for fastapi &gt;= 0.113.0
+pillow  # Required for image processing
+prometheus_client &gt;= 0.18.0
+prometheus-fastapi-instrumentator &gt;= 7.0.0
+tiktoken &gt;= 0.6.0  # Required for DBRX tokenizer
+lm-format-enforcer == 0.10.6
+outlines &gt;= 0.0.43, &lt; 0.1
+typing_extensions &gt;= 4.10
+filelock &gt;= 3.10.4 # filelock starts to support `mode` argument from 3.10.4
+partial-json-parser # used for parsing partial JSON outputs
+pyzmq
+msgspec
+gguf == 0.10.0
+importlib_metadata
+mistral_common[opencv] &gt;= 1.4.4
+pyyaml
+six&gt;=1.16.0; python_version &gt; &#39;3.11&#39; # transitive dependency of pandas that needs to be the latest version for python 3.12
+setuptools&gt;=74.1.1; python_version &gt; &#39;3.11&#39; # Setuptools is used by triton, we need to ensure a modern version is installed for 3.12+ so that it does not try to import distutils, which was removed in 3.12
+einops # Required for Qwen2-VL.
+compressed-tensors == 0.6.0 # required for compressed-tensors
+</code></pre><p>그리고, <code>requirements-cuda.txt</code> 파일은 다음과 같고, 위에서 참고한 <code>requirements-common.txt</code> 파일을 상속하여 설치하는 것을
+확인할 수 있었으며, Pytorch <code>2.4.0</code> 버전을 필요로 하는 것 까지 확인할 수 있었다.</p>
+<pre tabindex="0"><code># Common dependencies
+-r requirements-common.txt
+
+# Dependencies for NVIDIA GPUs
+ray &gt;= 2.9
+nvidia-ml-py # for pynvml package
+torch == 2.4.0
+# These must be updated alongside torch
+torchvision == 0.19   # Required for phi3v processor. See https://github.com/pytorch/vision?tab=readme-ov-file#installation for corresponding version
+xformers == 0.0.27.post2; platform_system == &#39;Linux&#39; and platform_machine == &#39;x86_64&#39;  # Requires PyTorch 2.4.0
+</code></pre><h3 id="원인-파악-2---pytorch-의-requirements">원인 파악 2 - Pytorch 의 Requirements</h3>
+<p><a href="#%EC%9B%90%EC%9D%B8-%ED%8C%8C%EC%95%85-1-vllm-%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%84-%ED%95%84%EC%9A%94%EB%A1%9C-%ED%95%98%EB%8A%94%EA%B0%80">원인 파악 1</a> 에서 우리는 torch (Pytorch) <code>2.4.0</code> 버전을
+요구하는 것을 확인하였다.</p>
+<p>로그를 살펴보니 <code>torch-2.4.0-cp310-cp310-manylinux1_x86_64.whl</code> 파일을 다운로드하는 것을 확인할 수 있었고
+PyPI Package Index 에서 해당 파일을 다운로드하여 확인하였다.</p>
+<ul>
+<li>파일 리스트 Index 링크: <a href="https://pypi.org/project/torch/2.4.0/#files">https://pypi.org/project/torch/2.4.0/#files</a></li>
+</ul>
+<p>참고로, <code>whl</code> (Wheel) 파일은 <code>zip</code> archive 의 형태와 같기 때문에, 파일 확장자를 <code>whl</code> 에서 <code>zip</code> 파일로 바꾸면
+해당 패키지 파일의 내용을 확인할 수 있다.</p>
+<p>압축파일을 열면, 아래와 같이 4개의 디렉토리가 리스팅되는 것을 확인할 수 있다.</p>
+<pre tabindex="0"><code>functorch
+torch
+torch-2.4.0.dist-info
+torchgen
+</code></pre><p><a href="https://packaging.python.org/en/latest">Python Packaging User Guide</a> 의
+<a href="https://packaging.python.org/en/latest/specifications/recording-installed-packages/">Recording installed projects</a>
+문서를 보면, <code>*.dist-info</code> 디렉토리에 해당 패키지에 관한 메타데이터 정보가 포함되어 있다고 한다.</p>
+<p>해당 디렉토리에 뭐가 들어가는지 찬한히 찾아보니, <code>METADATA</code> 파일에 Requirements 가 있을 것 같아서
+<a href="https://packaging.python.org/en/latest/specifications/core-metadata/">Core metadata specifications</a>
+문서를 읽어보었더니, <code>Requires-Dist</code> 에 필요한 외부 패키지를 추가할 수 있다고 한다.</p>
+<p>METADATA 파일을 열어보면 <code>Requires-Dist</code> 가 포함되어 있는 것을 확인할 수 있었다.</p>
+<pre tabindex="0"><code>Requires-Dist: filelock
+Requires-Dist: typing-extensions (&gt;=4.8.0)
+Requires-Dist: sympy
+Requires-Dist: networkx
+Requires-Dist: jinja2
+Requires-Dist: fsspec
+Requires-Dist: setuptools
+Requires-Dist: nvidia-cuda-nvrtc-cu12 (==12.1.105) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cuda-runtime-cu12 (==12.1.105) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cuda-cupti-cu12 (==12.1.105) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cudnn-cu12 (==9.1.0.70) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cublas-cu12 (==12.1.3.1) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cufft-cu12 (==11.0.2.54) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-curand-cu12 (==10.3.2.106) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cusolver-cu12 (==11.4.5.107) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-cusparse-cu12 (==12.1.0.106) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-nccl-cu12 (==2.20.5) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: nvidia-nvtx-cu12 (==12.1.105) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34;
+Requires-Dist: triton (==3.0.0) ; platform_system == &#34;Linux&#34; and platform_machine == &#34;x86_64&#34; and python_version &lt; &#34;3.13&#34;
+Provides-Extra: opt-einsum
+Requires-Dist: opt-einsum (&gt;=3.3) ; extra == &#39;opt-einsum&#39;
+Provides-Extra: optree
+Requires-Dist: optree (&gt;=0.11.0) ; extra == &#39;optree&#39;
+</code></pre><p>뭔가 이상은 없고, <code>torch</code> 를 설치하면 **&ldquo;CUDA Toolkit 을 설치할 필요가 없다&rdquo;**는 것은 잘 확인할 수 있었다.</p>
+<h3 id="원인-파악-3---colab-에-설치되어-있는-패키지-버전은">원인 파악 3 - Colab 에 설치되어 있는 패키지 버전은?</h3>
+<p>아래의 명령어를 사용하여 Colab 에 설치되어 있는 <code>torch</code> 와 <code>nvidia</code> 패키지의 버전을 확인할 수 있다.
+(Jupyter 커널에서 실행하려면 앞에 <code>!</code> 을 추가하여 실행)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip list | grep -E <span style="color:#e6db74">&#39;torch|nvidia&#39;</span>
+</span></span></code></pre></div><pre tabindex="0"><code>nvidia-cublas-cu12                 12.6.3.3
+nvidia-cuda-cupti-cu12             12.6.80
+nvidia-cuda-nvcc-cu12              12.6.77
+nvidia-cuda-runtime-cu12           12.6.77
+nvidia-cudnn-cu12                  9.5.1.17
+nvidia-cufft-cu12                  11.3.0.4
+nvidia-curand-cu12                 10.3.7.77
+nvidia-cusolver-cu12               11.7.1.2
+nvidia-cusparse-cu12               12.5.4.2
+nvidia-nccl-cu12                   2.23.4
+nvidia-nvjitlink-cu12              12.6.77
+torch                              2.5.0+cu121
+torchaudio                         2.5.0+cu121
+torchsummary                       1.5.1
+torchvision                        0.20.0+cu121
+</code></pre><h3 id="원인-파악-4---pytorch-의-조합-문제는-아닐까">원인 파악 4 - pytorch 의 조합 문제는 아닐까?</h3>
+<p>Pytorch 는 설치 시에 <code>torch</code>, <code>torchaudio</code> 및 <code>torchvision</code> 패키지들에 대해서
+버전 조합을 제공하고 있으며, <code>2.4.0</code> 버전 같은 경우에는 아래와 같이
+설치하도록 하고 있다.</p>
+<ul>
+<li>참고 링크: <a href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install torch<span style="color:#f92672">==</span>2.4.0 torchvision<span style="color:#f92672">==</span>0.19.0 torchaudio<span style="color:#f92672">==</span>2.4.0 --index-url https://download.pytorch.org/whl/cu121
+</span></span></code></pre></div><p>여기까지 오면 느낌상 <code>vLLM</code> 에서 <code>torchaudio</code> 를 포함하지 않거나 가이드하지 않아서
+생긴 것으로 파악되고, 간단히 <code>torchaudio</code> 의 버전만 2.4.0 으로 명시하면 될 것 같은
+느낌이 들었다.</p>
+<p>시도해 보자.</p>
+<h3 id="시도-1---pip-설치-시에-torchaudio-버전도-같이-명시해보기">시도 1 - pip 설치 시에 torchaudio 버전도 같이 명시해보기</h3>
+<p><code>vLLM</code> 설치 시에 <code>torchaudio</code> 도 <code>torch</code> 의 <code>2.4.0</code> 버전에 맞도록 명시하여 설치해보면
+될 것 같아서 아래와 같이 추가하여 시도해보았다.</p>
+<pre tabindex="0"><code>pip install vllm torchaudio==2.4.0
+</code></pre><p>해보니 <code>torchaudio</code> 도 <code>torchvision</code> 과 같이 기존의 설치되어 있는 패키지 삭제 후
+재설치 되었고, 정상적으로 설치되는 것을 확인할 수 있었다.</p>
+<pre tabindex="0"><code>...
+
+Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.20.0+cu121
+    Uninstalling torchvision-0.20.0+cu121:
+      Successfully uninstalled torchvision-0.20.0+cu121
+Attempting uninstall: torchaudio
+    Found existing installation: torchaudio 2.5.0+cu121
+    Uninstalling torchaudio-2.5.0+cu121:
+      Successfully uninstalled torchaudio-2.5.0+cu121
+Successfully installed compressed-tensors-0.6.0 datasets-3.0.2 dill-0.3.8 diskcache-5.6.3 fastapi-0.115.4 gguf-0.10.0 httptools-0.6.4 interegular-0.3.3 lark-1.2.2 lm-format-enforcer-0.10.6 mistral-common-1.4.4 msgspec-0.18.6 multiprocess-0.70.16 nvidia-cublas-cu12-12.1.3.1 nvidia-cuda-cupti-cu12-12.1.105 nvidia-cuda-nvrtc-cu12-12.1.105 nvidia-cuda-runtime-cu12-12.1.105 nvidia-cudnn-cu12-9.1.0.70 nvidia-cufft-cu12-11.0.2.54 nvidia-curand-cu12-10.3.2.106 nvidia-cusolver-cu12-11.4.5.107 nvidia-cusparse-cu12-12.1.0.106 nvidia-ml-py-12.560.30 nvidia-nccl-cu12-2.20.5 nvidia-nvtx-cu12-12.1.105 outlines-0.0.46 partial-json-parser-0.2.1.1.post4 prometheus-fastapi-instrumentator-7.0.0 pyairports-2.1.1 pycountry-24.6.1 python-dotenv-1.0.1 ray-2.38.0 starlette-0.41.2 tiktoken-0.7.0 tokenizers-0.20.1 torch-2.4.0 torchaudio-2.4.0 torchvision-0.19.0 transformers-4.46.1 triton-3.0.0 uvicorn-0.32.0 uvloop-0.21.0 vllm-0.6.3.post1 watchfiles-0.24.0 websockets-13.1 xformers-0.0.27.post2 xxhash-3.5.0
+</code></pre><p>이후 다음의 명령어를 통해서 <code>vLLM</code> 의 패키지를 import 해보면 정상적으로 되는 것을
+확인할 수 있었다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span><span style="color:#f92672">from</span> vllm <span style="color:#f92672">import</span> LLM, SamplingParams
+</span></span></code></pre></div><p>다만, CPU Instance 에서 실행하는 경우에는 아래와 같이 <code>libcuda.so.1</code> 이 없다는 WARNING 이
+나올 수는 있으나 문제는 아니니 무시해도 괜찮다.</p>
+<pre tabindex="0"><code>WARNING 10-31 11:40:14 _custom_ops.py:19] Failed to import from vllm._C with ImportError(&#39;libcuda.so.1: cannot open shared object file: No such file or directory&#39;)
+</code></pre><h2 id="결론">결론</h2>
+<p><del>Python 은 이런 맛으로 쓰는 것이다.</del></p>
+<p>추가로, Torch 에서 CUDA Toolkit 과 관련된 패키지를 함께 설치해주기 때문에,
+혹여나 Containerize 시에 CUDA Toolkit 을 함께 포함하지 않기를 권장한다.</p>
+<p>끝.</p>
+
+</content>
+<p>
+  
+  <a href="https://affirm-bats-yodel.github.io/blog/vllm/">#Vllm</a>
+  
+  <a href="https://affirm-bats-yodel.github.io/blog/google/">#Google</a>
+  
+  <a href="https://affirm-bats-yodel.github.io/blog/colab/">#Colab</a>
+  
+  <a href="https://affirm-bats-yodel.github.io/blog/llm/">#Llm</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
