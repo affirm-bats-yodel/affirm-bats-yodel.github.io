@@ -162,7 +162,7 @@ Provides-Extra: optree
 Requires-Dist: optree (>=0.11.0) ; extra == 'optree'
 ```
 
-뭔가 이상은 없고, `torch` 를 설치하면 **"CUDA Toolkit 을 설치할 필요가 없다"**는 것은 잘 확인할 수 있었다.
+뭔가 이상은 없고, `torch` 를 설치하면 **"CUDA Toolkit 을 설치할 필요가 없다"** 는 것은 잘 확인할 수 있었다.
 
 ### 원인 파악 3 - Colab 에 설치되어 있는 패키지 버전은?
 
