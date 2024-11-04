@@ -8,6 +8,11 @@ author = 'Lee'
 # Enable `robots.txt` for SEO
 enableRobotsTXT = true
 
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 [permalinks]
   blog = "/:slug/"
   tags = "/blog/:slug"
