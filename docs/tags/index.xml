@@ -8,8 +8,57 @@
     <language>ko-KR</language>
     <managingEditor>affirm-bats-yodel@duck.com (Lee)</managingEditor>
     <webMaster>affirm-bats-yodel@duck.com (Lee)</webMaster>
-    <lastBuildDate>Mon, 04 Nov 2024 01:29:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2024 22:34:37 +0000</lastBuildDate>
     <atom:link href="https://affirm-bats-yodel.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>11</title>
+      <link>https://affirm-bats-yodel.github.io/blog/11/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/11/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apache</title>
+      <link>https://affirm-bats-yodel.github.io/blog/apache/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/apache/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kafka</title>
+      <link>https://affirm-bats-yodel.github.io/blog/kafka/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/kafka/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://affirm-bats-yodel.github.io/blog/windows/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>아파치</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EC%95%84%ED%8C%8C%EC%B9%98/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EC%95%84%ED%8C%8C%EC%B9%98/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>윈도우</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EC%9C%88%EB%8F%84%EC%9A%B0/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EC%9C%88%EB%8F%84%EC%9A%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>카프카</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EC%B9%B4%ED%94%84%EC%B9%B4/</link>
+      <pubDate>Mon, 04 Nov 2024 22:34:37 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EC%B9%B4%ED%94%84%EC%B9%B4/</guid>
+      <description></description>
+    </item>
     <item>
       <title>다이소</title>
       <link>https://affirm-bats-yodel.github.io/blog/%EB%8B%A4%EC%9D%B4%EC%86%8C/</link>
