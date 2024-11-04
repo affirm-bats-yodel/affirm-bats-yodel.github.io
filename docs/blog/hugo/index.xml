@@ -12,9 +12,9 @@
     <atom:link href="https://affirm-bats-yodel.github.io/blog/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog Is Not That Hard (블로그 그렇게 어렵지 않다)</title>
-      <link>https://affirm-bats-yodel.github.io/blog-is-not-that-hard-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%96%B4%EB%A0%B5%EC%A7%80-%EC%95%8A%EB%8B%A4/</link>
+      <link>https://affirm-bats-yodel.github.io/blog/blog-is-not-that-hard-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%96%B4%EB%A0%B5%EC%A7%80-%EC%95%8A%EB%8B%A4/</link>
       <pubDate>Wed, 23 Oct 2024 08:28:30 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
-      <guid>https://affirm-bats-yodel.github.io/blog-is-not-that-hard-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%96%B4%EB%A0%B5%EC%A7%80-%EC%95%8A%EB%8B%A4/</guid>
+      <guid>https://affirm-bats-yodel.github.io/blog/blog-is-not-that-hard-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A0%87%EA%B2%8C-%EC%96%B4%EB%A0%B5%EC%A7%80-%EC%95%8A%EB%8B%A4/</guid>
       <description>&lt;p&gt;옛날에는 집 컴퓨터에 Apmsetup 을 통해서 기본적인 APM (Apache, PHP, MySQL) 을 설정&#xA;하고, 텍스트큐브 (Textcube) 를 설치해서 블로그를 만들었던 것 같은데 둘다 사라져버린&#xA;탓에 지금은 Wordpress 를 호스팅 서비스에 설치하여 사용하는 것이 주류가 된 것 같다.&lt;/p&gt;&#xA;&lt;p&gt;이후에는 &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; 과 Github Pages 기능을 통해서 정적 사이트를&#xA;만들어 사용했던 것 같다. 그 당시에도 몇번 시도해 봤었는데, Jekyll 이 Ruby 로 만들어져&#xA;있어서 Ruby 언어를 따로 알아야 할 것 같은 부담감이 있어서 딥하게는 사용해보진 못했다.&lt;/p&gt;</description>
     </item>
   </channel>

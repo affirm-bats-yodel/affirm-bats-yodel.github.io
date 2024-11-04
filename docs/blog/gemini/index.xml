@@ -12,9 +12,9 @@
     <atom:link href="https://affirm-bats-yodel.github.io/blog/gemini/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(2024 년 10월 기준) Google Gemini Pro 리뷰</title>
-      <link>https://affirm-bats-yodel.github.io/2024-%EB%85%84-10%EC%9B%94-%EA%B8%B0%EC%A4%80-google-gemini-pro-%EB%A6%AC%EB%B7%B0/</link>
+      <link>https://affirm-bats-yodel.github.io/blog/2024-%EB%85%84-10%EC%9B%94-%EA%B8%B0%EC%A4%80-google-gemini-pro-%EB%A6%AC%EB%B7%B0/</link>
       <pubDate>Thu, 24 Oct 2024 07:04:10 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
-      <guid>https://affirm-bats-yodel.github.io/2024-%EB%85%84-10%EC%9B%94-%EA%B8%B0%EC%A4%80-google-gemini-pro-%EB%A6%AC%EB%B7%B0/</guid>
+      <guid>https://affirm-bats-yodel.github.io/blog/2024-%EB%85%84-10%EC%9B%94-%EA%B8%B0%EC%A4%80-google-gemini-pro-%EB%A6%AC%EB%B7%B0/</guid>
       <description>&lt;p&gt;뭘 쓸까? 하고 이런저런 고민을 해보다가, 많이 사용하고 있는 &lt;a href=&#34;https://gemini.google.com&#34;&gt;Google Gemini&lt;/a&gt;&#xA;에 대하여 리뷰해볼까 한다.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;필자는 Google Gemini Pro 를 구독하여 사용하고 있어서, 무료 버전(?) 과의 차이가 있을 수 있다.&#xA;(무료 버전을 제공하는지는 잘 모르겠다.)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;google-bard-에서-gemini-으로&#34;&gt;Google Bard 에서 Gemini 으로&lt;/h2&gt;&#xA;&lt;p&gt;처음 사용할 때는 Google Gemini 가 아니라 Google Bard 였는데, 그때는 형편없는&#xA;성능에 &amp;ldquo;과연 LLM 은 바보상자인가?&amp;rdquo; 하는 생각이 들 정도로 쓰기 어려웠다.&lt;/p&gt;&#xA;&lt;p&gt;이후에 구글이 열심히 칼을 갈았는지, Google Bard 에서 Google Gemini 으로 이름을 바꾸고,&#xA;모델을 급격하게 업데이트하기 시작했다.&lt;/p&gt;</description>
     </item>
   </channel>
