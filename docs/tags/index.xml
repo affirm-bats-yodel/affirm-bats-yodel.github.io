@@ -8,8 +8,36 @@
     <language>ko-KR</language>
     <managingEditor>affirm-bats-yodel@duck.com (Lee)</managingEditor>
     <webMaster>affirm-bats-yodel@duck.com (Lee)</webMaster>
-    <lastBuildDate>Thu, 31 Oct 2024 10:07:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2024 01:29:24 +0000</lastBuildDate>
     <atom:link href="https://affirm-bats-yodel.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>다이소</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EB%8B%A4%EC%9D%B4%EC%86%8C/</link>
+      <pubDate>Mon, 04 Nov 2024 01:29:24 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EB%8B%A4%EC%9D%B4%EC%86%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>솔루엠</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EC%86%94%EB%A3%A8%EC%97%A0/</link>
+      <pubDate>Mon, 04 Nov 2024 01:29:24 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EC%86%94%EB%A3%A8%EC%97%A0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>알에프텍</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EC%95%8C%EC%97%90%ED%94%84%ED%85%8D/</link>
+      <pubDate>Mon, 04 Nov 2024 01:29:24 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EC%95%8C%EC%97%90%ED%94%84%ED%85%8D/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>충전기</title>
+      <link>https://affirm-bats-yodel.github.io/blog/%EC%B6%A9%EC%A0%84%EA%B8%B0/</link>
+      <pubDate>Mon, 04 Nov 2024 01:29:24 +0000</pubDate><author>affirm-bats-yodel@duck.com (Lee)</author>
+      <guid>https://affirm-bats-yodel.github.io/blog/%EC%B6%A9%EC%A0%84%EA%B8%B0/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Colab</title>
       <link>https://affirm-bats-yodel.github.io/blog/colab/</link>
