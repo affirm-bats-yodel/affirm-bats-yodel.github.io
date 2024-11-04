@@ -70,7 +70,7 @@ WMIC 을 설치하는 방법은 Microsoft Tech Community 의
 WMIC 을 설치하는 것을 권장한다.
 
 이후 설치가 완료되었다면, `wmic os` 를 윈도우의 터미널 창에서 입력하여
-뭔가 오류없이 이것저것 오류 없이 출력되는 것을 확인할 수 있다.
+이것저것 오류 없이 출력되는 것을 확인할 수 있다.
 
 ```powershell
 wmic os
